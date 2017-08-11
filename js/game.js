@@ -7,14 +7,13 @@ var counter = 0;
 function makeDiv(){
     // vary size for fun
     var divsize = ((Math.random()*100) + 50).toFixed();
-    var color = '#'+ Math.round(0xffffff * Math.random()).toString(16);
-    while(color === '#000000')
-    {
-    	color = '#'+ Math.round(0xffffff * Math.random()).toString(16);
-    }
+    var options = ['#f39c12','#f33412','#12f3a5','#1231f3','#86079f','#1ad20e','#dcf90f'];
+    var color = options[Math.floor(Math.random()*7)];
+   
     $newdiv = $('<div/>').css({
         'width':divsize+'px',
         'height':divsize+'px',
+        'border-radius': '50px',
         'background-color': color
     });
 
