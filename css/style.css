@@ -2,3 +2,23 @@ body {
 	background-color: black;
 }
 
+.tabs {
+	display: flex;
+	justify-content: space-around; 
+}
+
+#counter {
+	background-color: red;
+	width: 100px;
+	height: 100px;
+	/*padding-top: 50px;*/
+	text-align: center;
+	font-size: 30px;
+}
+
+#test {
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	padding-top: 50px;
+}
