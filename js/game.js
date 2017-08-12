@@ -13,7 +13,7 @@ function makeDiv(){
     $newdiv = $('<div/>').css({
         'width':divsize+'px',
         'height':divsize+'px',
-        'border-radius': '50px',
+        'border-radius': '50%',
         'background-color': color
     });
 
@@ -30,17 +30,22 @@ function makeDiv(){
     	$(this).fadeOut(200, function(){
     			$(this).remove();
     			counter += 1;
+    			$('#counter').text("Score: " + counter);
       			makeDiv();    		
     	}); 
 	});	
 }
 
-function timer()
-{
+setInterval(function () {
+    var d = new Date(); //get current time
+    var seconds = d.getMinutes() * 60 + d.getSeconds(); //convet current mm:ss to seconds for easier caculation, we don't care hours.
+    var oneMin = 60; 
+    var timeleft = oneMin - seconds % oneMin; // let's say now is 01:30, then current seconds is 60+30 = 90. And 90%300 = 90, finally 300-90 = 210. That's the time left!
+    var result = parseInt(timeleft / 60) + ':' + timeleft % 60; //formart seconds back into mm:ss 
+    document.getElementById('test').innerHTML = "Time left: " + result;
 
-}
+}, 500) //calling it every 0.5 second to do a count down
 
 $(document).ready(function() {
 	makeDiv();
-
 });
