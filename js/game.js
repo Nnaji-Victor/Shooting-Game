@@ -65,7 +65,7 @@ var counter;
 function initNewGame(){
     counter = 0; 
     $('#restart').hide();
-    createTimer(60);
+    createTimer(30);
 }
 
 function endGame() {
